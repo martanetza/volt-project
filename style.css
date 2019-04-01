@@ -428,6 +428,9 @@ button {
   display: none;
 }
 
+.back {
+  background: #b9bab7;
+}
 /*----------------------------------------------- MOBILE ------------------------------------------ */
 
 @media only screen and (max-width: 900px) {
