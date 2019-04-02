@@ -26,19 +26,27 @@
 
             <div class="info-item">
               <h5>Volt Recharging Service at Roskilde Festival</h5>
-              <input
-                id="numberOfServices"
-                type="number"
-                name="numberOfServices"
-              />
-              <label for="numberOfItems"
-                ><span>179 DKK</span> DKK 250 DKK</label
-              >
+              <div class="services-number">
+                <input
+                  value="1"
+                  id="numberOfServices"
+                  type="number"
+                  name="numberOfServices"
+                />
+                <label for="numberOfItems">
+                  <p>179</p>
+                  DKK</label
+                >
+                <span
+                  ><p>250</p>
+                  DKK</span
+                >
+              </div>
               <p>Swap your Volt Charger every day for a fully charged one.</p>
             </div>
           </div>
         </section>
-        <section class="cartItem">
+        <section id="cartItem-charger" class="cartItem">
           <h3>Volt Charger Deposit</h3>
           <div class="cartItem-wrapper">
             <div>
@@ -46,8 +54,18 @@
             </div>
             <div class="info-item">
               <h5>Refundable at anytime during the event</h5>
-              <input id="numberOfItems" type="number" name="numberOfItems" />
-              <label for="numberOfItems">200 DKK (Refundable)</label>
+              <div class="items-number">
+                <input
+                  value="1"
+                  id="numberOfChargers"
+                  type="number"
+                  name="numberOfItems"
+                />
+                <label for="numberOfItems">
+                  <p>200</p>
+                  DKK (Refundable)</label
+                >
+              </div>
               <p>
                 To use our recharging service you need to put down a deposit for
                 the portable Volt Charger.
@@ -55,7 +73,10 @@
             </div>
           </div>
         </section>
-        <section class="deliveryItems">
+        <input type="checkbox" id="checkboxCharger" />
+        <label for="checkboxCharger">I want to bring my own charger</label>
+
+        <section id="deliveryItems" class="deliveryItems">
           <h3>Delivery options</h3>
           <div class="deliveryItem">
             <h5>Pick up at festival or at Volt CPH</h5>
@@ -64,10 +85,6 @@
           <div class="deliveryItem">
             <h5>Shipped to home</h5>
             <h5>50 DKK</h5>
-          </div>
-          <div class="deliveryItem">
-            <h5>Bringing own Volt Charger</h5>
-            <h5>Free</h5>
           </div>
         </section>
       </div>
@@ -85,15 +102,24 @@
           <h3>Summary</h3>
           <div class="summeryItem">
             <h5>Swapping Service</h5>
-            <h5>200</h5>
+            <div>
+              <h5 class="finalPriceService finalPrice">179</h5>
+              <span>DKK</span>
+            </div>
           </div>
           <div class="summeryItem">
             <h5>Volt Charger Deposit</h5>
-            <h5>50 DKK</h5>
+            <div>
+              <h5 class="finalPriceChargers finalPrice">200</h5>
+              <span>DKK</span>
+            </div>
           </div>
           <div class="summeryItem">
             <h5>Total</h5>
-            <h5>250</h5>
+            <div>
+              <h5 class="finalPriceAll finalPrice">379</h5>
+              <span>DKK</span>
+            </div>
           </div>
         </section>
       </div>

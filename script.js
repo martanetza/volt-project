@@ -100,11 +100,62 @@ function showData(e) {
   console.log(e);
   const user = document.querySelector(".account");
   user.querySelector(".summeryItemName").textContent =
-    e.firstame + "" + e.lastname;
+    e.firstname + "" + e.lastname;
   user.querySelector(".summeryItemEmail").textContent = e.email;
   user.querySelector(".summeryItemPhone").textContent = e.phone;
   user.querySelector(".summeryItemCountry").textContent = e.country;
-
-  //   document.querySelector(".summeryItemsAccount").appendChild(user);
-  // remove();
 }
+//  cart items
+
+console.log(document.querySelector("#numberOfServices"));
+
+document
+  .querySelector("#numberOfServices")
+  .addEventListener("change", showPriceServices);
+
+function showPriceServices() {
+  document.querySelector(".services-number p").textContent =
+    179 * document.querySelector("#numberOfServices").value;
+  document.querySelector(".services-number span p").textContent =
+    250 * document.querySelector("#numberOfServices").value;
+  document.querySelector(
+    ".finalPriceService"
+  ).textContent = document.querySelector(".services-number p").textContent;
+  document.querySelector(".finalPriceAll").textContent =
+    Number(document.querySelector(".finalPriceService").textContent) +
+    Number(document.querySelector(".finalPriceChargers").textContent);
+}
+document
+  .querySelector("#numberOfChargers")
+  .addEventListener("change", showPriceChargers);
+
+function showPriceChargers() {
+  document.querySelector(".items-number p").textContent =
+    200 * document.querySelector("#numberOfChargers").value;
+  document.querySelector(
+    ".finalPriceChargers"
+  ).textContent = document.querySelector(".items-number p").textContent;
+  document.querySelector(".finalPriceAll").textContent =
+    Number(document.querySelector(".finalPriceService").textContent) +
+    Number(document.querySelector(".finalPriceChargers").textContent);
+}
+
+document.querySelector("#checkboxCharger").onclick = function() {
+  if (document.querySelector("#checkboxCharger").checked == true) {
+    document.querySelector("#deliveryItems").classList.add("hide");
+    document.querySelector("#cartItem-charger").classList.add("hide");
+    document.querySelector(".finalPriceChargers").textContent = "0";
+    document.querySelector(".finalPriceAll").textContent =
+      Number(document.querySelector(".finalPriceService").textContent) +
+      Number(document.querySelector(".finalPriceChargers").textContent);
+  } else {
+    document.querySelector("#deliveryItems").classList.remove("hide");
+    document.querySelector("#cartItem-charger").classList.remove("hide");
+    document.querySelector(
+      ".finalPriceChargers"
+    ).textContent = document.querySelector(".items-number p").textContent;
+    document.querySelector(".finalPriceAll").textContent =
+      Number(document.querySelector(".finalPriceService").textContent) +
+      Number(document.querySelector(".finalPriceChargers").textContent);
+  }
+};

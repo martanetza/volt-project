@@ -114,7 +114,7 @@ li.acitve:before {
   display: flex;
 }
 
-.cartItem-wrapper div {
+.cartItem-wrapper div:not(.services-number) {
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -156,9 +156,10 @@ li.acitve:before {
 h5 {
   margin: 0;
 }
-.summeryItems h5 {
+.summeryItems h5:not(.finalPrice) {
   font-weight: 100;
 }
+
 .deliveryItem,
 .summeryItem {
   display: flex;
@@ -175,11 +176,30 @@ h5 {
   border: none;
   padding: 0px;
 }
-
-.summeryItem h5:nth-child(2) {
+.summeryItem span {
   font-weight: bold;
+  font-size: 1.1em;
+}
+.info-item span,
+.info-item span p {
+  text-decoration: line-through;
+}
+.items-number,
+.services-number {
+  padding-left: 15%;
+}
+.items-number p,
+.services-number p {
+  display: inline-block;
 }
 
+.finalPrice {
+  display: inline-block;
+  font-weight: bolder;
+}
+#checkboxCharger {
+  width: auto;
+}
 /*-------------------------------- form -----------------------------  */
 
 .registerForm {
