@@ -138,19 +138,29 @@ function showPriceChargers() {
   document.querySelector(".finalPriceAll").textContent =
     Number(document.querySelector(".finalPriceService").textContent) +
     Number(document.querySelector(".finalPriceChargers").textContent);
+  if (document.querySelector("#numberOfChargers").value > 0) {
+    document.querySelector("#checkboxCharger").checked = false;
+    showDeliveryOptions();
+  }
 }
 
-document.querySelector("#checkboxCharger").onclick = function() {
+document
+  .querySelector("#checkboxCharger")
+  .addEventListener("click", showDeliveryOptions);
+
+function showDeliveryOptions() {
   if (document.querySelector("#checkboxCharger").checked == true) {
     document.querySelector("#deliveryItems").classList.add("hide");
-    document.querySelector("#cartItem-charger").classList.add("hide");
+    document.querySelector("#numberOfChargers").value = "0";
+    document.querySelector(".items-number p").textContent =
+      200 * document.querySelector("#numberOfChargers").value;
     document.querySelector(".finalPriceChargers").textContent = "0";
     document.querySelector(".finalPriceAll").textContent =
       Number(document.querySelector(".finalPriceService").textContent) +
       Number(document.querySelector(".finalPriceChargers").textContent);
   } else {
     document.querySelector("#deliveryItems").classList.remove("hide");
-    document.querySelector("#cartItem-charger").classList.remove("hide");
+    // document.querySelector("#cartItem-charger").classList.remove("hide");
     document.querySelector(
       ".finalPriceChargers"
     ).textContent = document.querySelector(".items-number p").textContent;
@@ -158,4 +168,4 @@ document.querySelector("#checkboxCharger").onclick = function() {
       Number(document.querySelector(".finalPriceService").textContent) +
       Number(document.querySelector(".finalPriceChargers").textContent);
   }
-};
+}
