@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i");
 
+@font-face {
+  font-family: Proxima;
+  src: url(ProximaNova-Regular.otf);
+}
+
 body {
   background: #f4f4f4;
-  font-family: "Lato";
+  font-family: "Proxima";
 }
 section {
   border-radius: 7px;
@@ -15,6 +20,18 @@ h3 {
 }
 h5 {
   font-size: 1.1em;
+}
+
+input {
+  font-size: 1.1em;
+  padding: 4px;
+  border-radius: 3px;
+  border-style: solid;
+  border: 1px solid #c7c7c7;
+}
+label {
+  padding: 4px;
+  font-weight: bold;
 }
 
 /*---------------------------- form-navigation-------------------------  */
@@ -114,7 +131,7 @@ li.acitve:before {
   display: flex;
 }
 
-.cartItem-wrapper div:not(.services-number) {
+.cartItem-wrapper div:not(.item) {
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -284,6 +301,10 @@ label {
   width: 30%;
 }
 
+form {
+  padding-bottom: 40px;
+}
+
 /*-------------------------------- payment -----------------------------  */
 
 .paymentForm {
@@ -311,7 +332,6 @@ label {
 .payment-details-wrapper div:nth-child(2) {
   grid-column: 1 / 2;
   grid-row: 2/3;
-  color: blue;
   display: grid;
   height: 10vh;
   align-items: center;
@@ -364,7 +384,7 @@ label {
 }
 .payment-details-wrapper div:nth-child(2) input,
 .payment-details-wrapper div:nth-child(3) input {
-  width: 90%;
+  width: 60%;
   margin: 0;
 }
 .payment-details-wrapper div:nth-child(2) input:nth-child(2),
@@ -434,7 +454,7 @@ button {
   background-color: #a6cc45;
   border: none;
   color: white;
-  padding: 15px 52px;
+  padding: 10px 52px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -451,6 +471,14 @@ button {
 .back {
   background: #b9bab7;
 }
+
+.open {
+  border-radius: 50px;
+  width: 40px;
+  padding: 0px;
+  font-size: 2.1em;
+  display: none;
+}
 /*----------------------------------------------- MOBILE ------------------------------------------ */
 
 @media only screen and (max-width: 900px) {
@@ -462,9 +490,19 @@ button {
     width: 95vw;
     margin: auto;
     display: grid;
-    grid-gap: 5%;
+    grid-gap: 2%;
     grid-template-columns: 1fr;
     grid-template-areas: "area1" "area2" "area3";
+  }
+  .paymentMetod li div {
+    margin: 0px;
+    width: 15vw;
+    height: 15vw;
+  }
+  .paymentMetod div img {
+    width: 60%;
+    margin: auto;
+    display: block;
   }
   .buttons {
     grid-area: area3;
@@ -472,5 +510,33 @@ button {
 
   .wrapperForm-area1 {
     flex-direction: row;
+  }
+  .open {
+    display: block;
+    border-radius: 40px;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    font-size: 1.7em;
+  }
+
+  .title-collaps-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+  }
+  .title-collaps-box h3 {
+    border-bottom: none;
+    padding: 0px;
+  }
+
+  .summeryItems .summeryItem {
+    display: none;
+  }
+
+  .summeryItemsAccount .summeryItem {
+    display: none;
   }
 }

@@ -107,6 +107,9 @@ function showData(e) {
 }
 //  cart items
 
+if (document.querySelector("#numberOfChargers").value == 0) {
+  document.querySelector("#deliveryItems").classList.add("hide");
+}
 console.log(document.querySelector("#numberOfServices"));
 
 document
@@ -139,14 +142,21 @@ function showPriceChargers() {
     Number(document.querySelector(".finalPriceService").textContent) +
     Number(document.querySelector(".finalPriceChargers").textContent);
   if (document.querySelector("#numberOfChargers").value > 0) {
-    document.querySelector("#checkboxCharger").checked = false;
-    showDeliveryOptions();
+    document.querySelector("#deliveryItems").classList.remove("hide");
+    document.querySelector("#deliveryItems").classList.add("show");
+
+    // document.querySelector("#checkboxCharger").checked = false;
+    // showDeliveryOptions();
+  }
+  if (document.querySelector("#numberOfChargers").value == 0) {
+    document.querySelector("#deliveryItems").classList.remove("show");
+    document.querySelector("#deliveryItems").classList.add("hide");
   }
 }
 
-document
-  .querySelector("#checkboxCharger")
-  .addEventListener("click", showDeliveryOptions);
+// document
+//   .querySelector("#checkboxCharger")
+//   .addEventListener("click", showDeliveryOptions);
 
 function showDeliveryOptions() {
   if (document.querySelector("#checkboxCharger").checked == true) {

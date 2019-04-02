@@ -26,7 +26,7 @@
 
             <div class="info-item">
               <h5>Volt Recharging Service at Roskilde Festival</h5>
-              <div class="services-number">
+              <div class="services-number item">
                 <input
                   value="1"
                   id="numberOfServices"
@@ -54,15 +54,15 @@
             </div>
             <div class="info-item">
               <h5>Refundable at anytime during the event</h5>
-              <div class="items-number">
+              <div class="items-number item">
                 <input
-                  value="1"
+                  value="0"
                   id="numberOfChargers"
                   type="number"
                   name="numberOfItems"
                 />
                 <label for="numberOfItems">
-                  <p>200</p>
+                  <p>0</p>
                   DKK (Refundable)</label
                 >
               </div>
@@ -74,7 +74,9 @@
           </div>
         </section>
         <input type="checkbox" id="checkboxCharger" />
-        <label for="checkboxCharger">I want to bring my own charger(s)</label>
+        <label for="checkboxCharger"
+          >I want to bring my own Volt charger(s) (no deposit)</label
+        >
 
         <section id="deliveryItems" class="deliveryItems">
           <h3>Delivery options</h3>
@@ -90,7 +92,10 @@
       </div>
       <div class="wrapperForm-area2">
         <section class="summeryItemsAccount hide">
-          <h3>Account</h3>
+          <div class="title-collaps-box">
+            <h3>Account</h3>
+            <button class="open">+</button>
+          </div>
           <div class="account">
             <h5 class="summeryItem summeryItemName"></h5>
             <h5 class="summeryItem summeryItemEmail"></h5>
@@ -99,7 +104,10 @@
           </div>
         </section>
         <section class="summeryItems">
-          <h3>Summary</h3>
+          <div class="title-collaps-box">
+            <h3>Summary</h3>
+            <button class="open">+</button>
+          </div>
           <div class="summeryItem">
             <h5>Swapping Service</h5>
             <div>
